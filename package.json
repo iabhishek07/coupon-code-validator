@@ -1,0 +1,19 @@
+{
+  "name": "coupon-code-validator",
+  "version": "1.0.0",
+  "description": "This repository holds the backend resources for coupon code validator",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/iabhishek07/coupon-code-validator.git"
+  },
+  "author": "Abhishek Wagh",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/iabhishek07/coupon-code-validator/issues"
+  },
+  "homepage": "https://github.com/iabhishek07/coupon-code-validator#readme"
+}
