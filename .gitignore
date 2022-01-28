@@ -108,3 +108,4 @@ package-lock.json
 /dist
 **/.idea
 **/.DS_Store
+/TestFiles
