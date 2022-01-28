@@ -5,7 +5,7 @@ const config = {
   entry: {
     createCouponCode: "./Lambdas/CreateCouponCode/index.js",
     listCouponCodes: "./Lambdas/ListCouponCodes/index.js",
-    validateCouponCodes: "./Lambdas/ValidateCouponCodes/index.js",
+    validateCouponCodes: "./Lambdas/ValidateCouponCodes/index.js"
   },
   output: {
     filename: "[name]/index.js",
