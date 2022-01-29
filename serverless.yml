@@ -27,16 +27,17 @@ provider:
           Action:
             - dynamodb:GetItem
             - dynamodb:PutItem
+            - dynamodb:Scan
           Resource:
             - "Fn::GetAtt": [CouponCodesTable, Arn]
 
 functions:
   createCouponCode:
-    handler: Lambdas/CreateCouponCode/index.handler
+    handler: CreateCouponCode/index.handler
     name: createCouponCode-${self:provider.stage}
     package:
       individually: true
-      artifact: "./dist/createCouponCode.zip"
+      artifact: "./dist/CreateCouponCode.zip"
     events:
       - http:
           path: /coupon
@@ -44,11 +45,11 @@ functions:
           cors: true
 
   listCouponCodes:
-    handler: Lambdas/ListCouponCodes/index.handler
+    handler: ListCouponCodes/index.handler
     name: listCouponCodes-${self:provider.stage}
     package:
       individually: true
-      artifact: "./dist/listCouponCodes.zip"
+      artifact: "./dist/ListCouponCodes.zip"
     events:
       - http:
           path: /coupons
@@ -56,11 +57,11 @@ functions:
           cors: true
 
   validateCouponCodes:
-    handler: Lambdas/ValidateCouponCodes/index.handler
+    handler: ValidateCouponCodes/index.handler
     name: validateCouponCodes-${self:provider.stage}
     package:
       individually: true
-      artifact: "./dist/validateCouponCodes.zip"
+      artifact: "./dist/ValidateCouponCodes.zip"
     events:
       - http:
           path: /coupon
