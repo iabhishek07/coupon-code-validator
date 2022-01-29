@@ -10,7 +10,7 @@ const {
 
 exports.handler = async event => {
   console.log("Event-", event);
-  const { couponCode, totalCartAmount } = event;
+  const { couponCode, totalCartAmount } = event.queryStringParameters;
 
   if (!couponCode || !totalCartAmount)
     return badRequestResponse(

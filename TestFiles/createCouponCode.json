@@ -1,0 +1,10 @@
+{
+  "couponName": "HOLIDAY OFFER",
+  "couponCode": "HOLIDAY75",
+  "couponType": 2,
+  "discountPercentage": 20,
+  "couponValidFrom": "2022-01-28T17:27:53.422Z",
+  "couponValidUpto": "2022-01-31T17:27:53.422Z",
+  "minimumCartAmountToApply": 100,
+  "discountAmount": 50
+}

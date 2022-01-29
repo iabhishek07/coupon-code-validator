@@ -8,11 +8,12 @@ const {
 } = require("../helpers/constants");
 const { createCouponCodeValidation } = require("../helpers/validations");
 
-exports.handler = async event => {
+module.exports.handler = async event => {
   console.log("Event-", event);
+  const body = JSON.parse(event.body);
 
   // create coupon code validations
-  const validationResult = createCouponCodeValidation(event);
+  const validationResult = createCouponCodeValidation(body);
   if (validationResult.length) return badRequestResponse(validationResult);
 
   const couponId = ULID.ulid();
@@ -20,7 +21,7 @@ exports.handler = async event => {
     TableName: DYNAMODB,
     Item: {
       couponId,
-      ...event
+      ...body
     }
   };
 

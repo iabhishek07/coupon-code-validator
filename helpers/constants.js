@@ -5,27 +5,27 @@ const CouponTypes = {
 
 const okResponse = msg => ({
   statusCode: 200,
-  body: msg
+  body: JSON.stringify(msg)
 });
 
 const createResponse = msg => ({
   statusCode: 201,
-  body: msg
+  body: JSON.stringify(msg)
 });
 
 const badRequestResponse = msg => ({
   statusCode: 400,
-  body: msg
+  body: JSON.stringify(msg)
 });
 
 const resourceNotFound = msg => ({
   statusCode: 404,
-  body: msg
+  body: JSON.stringify(msg)
 });
 
 const internalServerError = msg => ({
   statusCode: 500,
-  body: msg
+  body: JSON.stringify(msg)
 });
 
 module.exports = {

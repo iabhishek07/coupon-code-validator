@@ -6,7 +6,7 @@ const {
   internalServerError
 } = require("../helpers/constants");
 
-exports.handler = async () => {
+module.exports.handler = async () => {
   const params = {
     TableName: DYNAMODB
   };
