@@ -12,14 +12,6 @@ async function createItem(params) {
   }
 }
 
-async function getItem(params) {
-  try {
-    return ddb.get(params).promise();
-  } catch (err) {
-    return err;
-  }
-}
-
 async function listItems(params) {
   try {
     return ddb.scan(params).promise();
@@ -30,6 +22,5 @@ async function listItems(params) {
 
 module.exports = {
   createItem,
-  getItem,
   listItems
 };

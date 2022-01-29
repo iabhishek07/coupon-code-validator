@@ -1,6 +1,10 @@
 const { DYNAMODB } = process.env;
-
-const { listItems } = require("../ddb-helpers");
+const { listItems } = require("../helpers/ddb-helpers");
+const {
+  resourceNotFound,
+  okResponse,
+  internalServerError
+} = require("../helpers/constants");
 
 exports.handler = async () => {
   const params = {
@@ -11,20 +15,11 @@ exports.handler = async () => {
     const data = await listItems(params);
 
     if (!data.Items || !data.Items.length) {
-      return {
-        statusCode: 404,
-        body: "Requested data not found"
-      };
+      return resourceNotFound("Requested data not found");
     }
 
-    return {
-      statusCode: 200,
-      body: data.Items
-    };
+    return okResponse(data.Items);
   } catch (err) {
-    return {
-      statusCode: 500,
-      body: err
-    };
+    return internalServerError(err);
   }
 };
