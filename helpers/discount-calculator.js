@@ -6,9 +6,8 @@ const discountCalculator = (couponDetails, totalCartAmount) => {
 
   // Flat discount - deduct predefined discount amount from total cart amount
   if (couponType === CouponTypes.FLAT_DISCOUNT) discount = discountAmount;
-
   // Percentage discount - deduct percentage upto predefined maximum discount amount
-  if (couponType === CouponTypes.PERCENTAGE_DISCOUNT) {
+  else if (couponType === CouponTypes.PERCENTAGE_DISCOUNT) {
     const percentageDiscountAmount =
       (discountPercentage / 100) * totalCartAmount;
 
