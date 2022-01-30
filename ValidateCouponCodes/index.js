@@ -27,7 +27,12 @@ exports.handler = async event => {
     };
 
     // Fetching coupon details of requested couponCode
-    const couponDetails = (await listItems(params)).Items[0];
+    const response = await listItems(params);
+
+    if (response.Items && !response.Items.length)
+      return badRequestResponse(`Invalid coupon code - '${couponCode}'`);
+
+    const couponDetails = response.Items[0];
 
     // Validate coupon code
     const couponValidation = validateCouponCode(couponDetails, totalCartAmount);
@@ -35,7 +40,6 @@ exports.handler = async event => {
 
     // calculate discount
     const discountAmount = discountCalculator(couponDetails, totalCartAmount);
-    console.log(discountAmount);
 
     return okResponse(discountAmount);
   } catch (err) {

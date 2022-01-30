@@ -1,0 +1,6 @@
+{
+  "queryStringParameters": {
+    "couponCode": "HOLIDAY25",
+    "totalCartAmount": 200
+  }
+}
